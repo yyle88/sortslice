@@ -1,6 +1,10 @@
 package slicesort
 
-import "sort"
+import (
+	"sort"
+
+	"github.com/pkg/errors"
+)
 
 type Slice[V any] struct {
 	data  []V
@@ -21,12 +25,13 @@ func (T *Slice[V]) Len() int {
 }
 
 func (T *Slice[V]) Less(i, j int) bool {
-	if T.iLess != nil {
+	switch {
+	case T.iLess != nil:
 		return T.iLess(i, j)
-	} else if T.vLess != nil {
+	case T.vLess != nil:
 		return T.vLess(T.data[i], T.data[j])
-	} else {
-		panic("missing less func")
+	default:
+		panic(errors.New("missing less function"))
 	}
 }
 
