@@ -1,4 +1,4 @@
-module github.com/yyle88/slicesort
+module github.com/yyle88/sortslice
 
 go 1.22.3
 

@@ -1,4 +1,4 @@
-package slicesort
+package sortslice
 
 import (
 	"testing"
