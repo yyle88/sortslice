@@ -1,6 +1,6 @@
 module github.com/yyle88/sortslice
 
-go 1.22.3
+go 1.22.6
 
 require (
 	github.com/pkg/errors v0.9.1
